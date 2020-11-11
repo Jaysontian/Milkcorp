@@ -1,0 +1,129 @@
+<html>
+<head>
+	<script src="script/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Alata|Dosis:400,700&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="script/main.js"></script>
+	<script type="text/javascript" src="script/data.js"></script>
+	<script type="text/javascript" src="script/update.js"></script>
+	<script type="text/javascript" src="script/game.js"></script>
+	<script type="text/javascript" src="script/format.js"></script>
+	<script type="text/javascript" src="script/news.js"></script>
+	<script type="text/javascript" src="script/place.js"></script>
+	<link rel="stylesheet" href="style/main.css">
+	<meta name="viewport" content="user-scalable=no" />
+</head>
+<body>
+	<div id="notify" class="modal">
+	  <div class="modal-content" id='notify-modal'>
+	  	<h4 id='notify-title'></h4>
+	    <p id='notify-text'></p>
+	    <button onclick='closenotify()'>OK</button>
+	  </div>
+	</div>
+	<div id="choice" class="modal">
+	  <div class="modal-content" id='notify-modal'>
+	  	<h4 id='choice-title'></h4>
+	    <p id='choice-text'></p>
+	    <button class='no'>Choice 1</button>
+	    <button class='yes' style='background-color:#ffb3b3;'>Choice 2</button>
+	  </div>
+	</div>
+
+	<div class='container'>
+		<div class='status'>
+			<div class='coins-con'>
+				<h1>$ <span id='coins'></span></h1>
+				<p>$ <span id='rate'></span> / sec</p>
+			</div>
+			<div>
+				<details open id='details'><summary>Details</summary>
+					<p id='milk-div'>Milk <span id='milk'></span></p>
+					<p>Speed <span id='speed'></span></p>
+					<p>Price <span id='price'></span></p>
+					<p>Cows <span id='cows'></span></p>
+				</details>
+			</div>
+			<div id='news'>
+				<div id='news-gradient'></div>
+				<details open id='news-con'><summary>Log</summary></details>
+			</div>
+		</div>
+
+		<div class='actions home'>
+			<div class='production con wood'>
+				<h1>Production</h1>
+				<button onclick='Game.sellclick()'>Sell</button>
+				<!--<button onclick='data.coins += 1000;'>+ $1000</button>-->
+			</div>
+			<div class='con wood left'>
+				<details open id='details'><summary id='rank'>Rank 1</summary>
+					<p>Next Rank <span id='nextrank'></span></p>
+				</details>
+				<div class='upgrades'>
+					
+				</div>
+				<!--
+				<button class='tooltip'>Milk Cartons<span>$ 20</span> 
+					<div class="barmax">
+				  		<div class="bar"></div>
+					</div>
+					<span class="tooltiptext">Increase the value of milk by 5%.</span>
+				</button>-->
+			</div>
+			<div class='research con'>
+				<h1>Research</h1>
+				<div id='research-con'></div>
+			</div>
+			<div class='town con'>
+				<h1>Town</h1>
+				<div id='town-con'></div>
+			</div>
+			<div class='ascension con'>
+				<details id='details' open><summary>Ascension</summary>
+					<p>Reach the specified farm value to evolve your cow and ascend.</p>
+					<p style='margin-top:10px;'>Farm Value <span id='value'></span></p>
+					<div id='ascension-con'></div>
+				</details>
+			</div>
+			<div class='settings con'>
+				<details id='details'><summary>Settings</summary>
+					<button onclick='restart()'>Restart Game</button>
+					<button onclick='devinfo()'>Development Info</button>
+					<button onclick='document.location()'>Github</button>
+				</details>
+			</div>
+
+			<img src='images/grass.jpg' id='grass'>
+			<img src='images/giphy.gif' id='pic'>
+		</div>
+
+		<div class='actions places'>
+			<div id='casino-con' class='place'>
+				<div class='town con'>
+					<button onclick='home()'>Back to Farm</button>
+				</div>
+				<div class='con purple'>
+					<h1>Casino</h1>
+					<p>Feelin' lucky? Welcome to the casino! Get more than what you're lookin for.</p>
+				</div>
+				<div class='con gold'>
+					<h1>Jackpot</h1>
+					<p>Low risk but you earn money quick! Three matches you earn 1000. Two matches you win 200. $99 per spin.</p>
+					<button onclick='Place.casinojackpot()' id='jackpotbtn'>Spin</button>
+				</div>
+				<div class='con red'>
+					<h1>Monopoly</h1>
+					<p>Take a risky spin and earn big. Three matches you earn 10,000. $500 per spin.</p>
+					<button onclick='Place.casinomonopoly()' id='monopolybtn'>Spin</button>
+				</div>
+				<div class='con lime'>
+					<h1>Twist of Fate</h1>
+					<p>Let fate decide you earnings. Ranges from $0 to $1,000. $499 per spin. </p>
+					<button onclick='Place.casinofate()'>Spin</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
